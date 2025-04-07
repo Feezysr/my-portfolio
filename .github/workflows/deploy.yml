@@ -1,45 +1,44 @@
-name: Deploy to GitHub Pages
-
+name: Build and Deploy
+env:
+  CI: false
+  GITHUB_USERNAME: ${{ github.repository_owner }}
+  REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  USE_GITHUB_DATA: "true"
+  MEDIUM_USERNAME: "saadpasta"
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
-  workflow_dispatch:
-
+  schedule:
+    - cron: "0 12 * * 1"
 permissions:
   contents: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-
-      - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v3
         with:
-          node-version: 20.x
+          persist-credentials: false
 
-      - name: Install Dependencies 📦
-        run: |
-          echo "Current npm version:"
-          npm --version
-          echo "Installing dependencies..."
-          rm -rf node_modules package-lock.json
-          npm install
-          echo "Dependencies installed successfully"
+      - name: Setup Node.js 🔧
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: 18.x
+          cache: 'npm'
 
-      - name: Build 🔨
-        run: |
-          npm run build
-          cp build/index.html build/404.html
+      - name: Install Dependencies 🔧
+        run: npm ci
+
+      - name: Build 🔧
+        run: npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
+          folder: build
           clean: true
-          clean-exclude: |
-            .nojekyll
