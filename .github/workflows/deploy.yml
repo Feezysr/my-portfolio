@@ -20,12 +20,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'npm'
 
       - name: Install Dependencies 📦
         run: |
-          npm ci
-          npm install -g npm@latest
+          echo "Current npm version:"
+          npm --version
+          echo "Installing dependencies..."
+          rm -rf node_modules package-lock.json
+          npm install
+          echo "Dependencies installed successfully"
 
       - name: Build 🔨
         run: |
