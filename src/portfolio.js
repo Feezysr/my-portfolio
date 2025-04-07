@@ -236,7 +236,7 @@ const bigProjects = {
   subtitle: "SHOWCASE OF MY LATEST DATA SCIENCE AND MACHINE LEARNING WORK",
   projects: [
     {
-      image: require("./assets/images/earthquake_new.jpg"), // Local image path
+      image: require("./assets/images/earthquake.jpg"), // Local image path
       projectName: "Nepal Earthquake Project",
       projectDesc:
         "Machine learning project focused on predicting building damage from earthquake data using decision trees and logistic regression",
