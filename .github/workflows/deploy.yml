@@ -25,17 +25,17 @@ jobs:
         uses: actions/setup-node@v3.8.1
         with:
           node-version: 18.x
+          cache: 'npm'
 
-      - name: Update npm 🚀
-        run: npm install -g npm@latest
+      - name: Install Dependencies 🔧
+        run: npm ci
 
-      - name: Install and Build 🔧 # Build the Project
-        run: |
-          npm install
-          npm run build
+      - name: Build 🔧
+        run: npm run build
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is provided by GitHub.
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
