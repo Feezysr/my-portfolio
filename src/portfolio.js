@@ -25,8 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate Data Scientist & ML Engineer 🚀 with experience in building Machine Learning models, Data Analytics solutions, and AI applications using Python, TensorFlow, and other cutting-edge technologies."
   ),
-  resumeLink:
-    "Hafiz, Ds.pdf", // Path to your resume file
+  resumeLink: "Hafiz, Ds.pdf", // Path to your resume file
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -54,7 +53,9 @@ const skillsSection = {
     emoji(
       "⚡ Develop and deploy machine learning models to solve complex business problems"
     ),
-    emoji("⚡ Create data visualization dashboards and interactive analytics tools using Power BI and Tableau"),
+    emoji(
+      "⚡ Create data visualization dashboards and interactive analytics tools using Power BI and Tableau"
+    ),
     emoji(
       "⚡ Build AI applications with Computer Vision and Natural Language Processing capabilities"
     )
@@ -237,7 +238,8 @@ const bigProjects = {
     {
       image: require("./assets/images/earthquake.jpg"), // Local image path
       projectName: "Nepal Earthquake Project",
-      projectDesc: "Machine learning project focused on predicting building damage from earthquake data using decision trees and logistic regression",
+      projectDesc:
+        "Machine learning project focused on predicting building damage from earthquake data using decision trees and logistic regression",
       footerLink: [
         {
           name: "View Project",
@@ -248,7 +250,8 @@ const bigProjects = {
     {
       image: require("./assets/images/chatbot.jpg"), // Local image path
       projectName: "Customer Service Chatbot",
-      projectDesc: "A transformer-based chatbot API built using DistilBERT, trained to classify customer service intents",
+      projectDesc:
+        "A transformer-based chatbot API built using DistilBERT, trained to classify customer service intents",
       footerLink: [
         {
           name: "View Project",
@@ -259,7 +262,8 @@ const bigProjects = {
     {
       image: require("./assets/images/speech.jpg"), // Local image path
       projectName: "Speech Recognition App",
-      projectDesc: "A real-time speech recognition application with sentiment analysis capabilities",
+      projectDesc:
+        "A real-time speech recognition application with sentiment analysis capabilities",
       footerLink: [
         {
           name: "View Project",
@@ -270,7 +274,8 @@ const bigProjects = {
     {
       image: require("./assets/images/face.jpg"), // Local image path
       projectName: "Face Recognition App",
-      projectDesc: "A facial recognition application using computer vision techniques",
+      projectDesc:
+        "A facial recognition application using computer vision techniques",
       footerLink: [
         {
           name: "View Project",
@@ -332,8 +337,7 @@ const blogSection = {
     {
       url: "#",
       title: "Add your blog title here",
-      description:
-        "Add your blog description here"
+      description: "Add your blog description here"
     }
   ],
   display: false // Set false to hide this section, defaults to true
@@ -365,9 +369,7 @@ const podcastSection = {
   subtitle: "DISCUSSING DATA SCIENCE AND MACHINE LEARNING TOPICS",
 
   // Please Provide with Your Podcast embeded Link
-  podcast: [
-    ""
-  ],
+  podcast: [""],
   display: false // Set false to hide this section, defaults to true
 };
 
@@ -382,8 +384,7 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Interested in working together? Feel free to reach out.",
+  subtitle: "Interested in working together? Feel free to reach out.",
   number: "",
   email_address: "hafiz4salisu@gmail.com"
 };
@@ -426,4 +427,3 @@ export {
   resumeSection,
   footerSection
 };
-

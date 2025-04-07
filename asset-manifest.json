@@ -28,8 +28,5 @@
     "769.bc12ab38.chunk.css.map": "/my-portfolio/static/css/769.bc12ab38.chunk.css.map",
     "769.5726cc13.chunk.js.map": "/my-portfolio/static/js/769.5726cc13.chunk.js.map"
   },
-  "entrypoints": [
-    "static/css/main.07e284af.css",
-    "static/js/main.8e5a700f.js"
-  ]
+  "entrypoints": ["static/css/main.07e284af.css", "static/js/main.8e5a700f.js"]
 }
