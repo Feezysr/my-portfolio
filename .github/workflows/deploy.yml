@@ -23,10 +23,14 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies 📦
-        run: npm ci
+        run: |
+          npm ci
+          npm install -g npm@latest
 
       - name: Build 🔨
-        run: npm run build
+        run: |
+          npm run build
+          cp build/index.html build/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -34,3 +38,5 @@ jobs:
           folder: build
           branch: gh-pages
           clean: true
+          clean-exclude: |
+            .nojekyll
